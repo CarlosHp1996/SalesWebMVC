@@ -12,17 +12,18 @@ namespace SalesWebMVC.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private readonly SalesWebMVCContext _context;
+        private readonly SalesWebMVCContext _context;        
 
         public DepartmentsController(SalesWebMVCContext context)
         {
-            _context = context;
-        }
+            _context = context;            
+        }       
 
         // GET: Departments
         public async Task<IActionResult> Index()
-        {
-              return View(await _context.Department.ToListAsync());
+        {            
+            return View(await _context.Department.ToListAsync());             
+            
         }
 
         // GET: Departments/Details/5
@@ -45,7 +46,7 @@ namespace SalesWebMVC.Controllers
 
         // GET: Departments/Create
         public IActionResult Create()
-        {
+        {            
             return View();
         }
 
@@ -156,6 +157,6 @@ namespace SalesWebMVC.Controllers
         private bool DepartmentExists(int id)
         {
           return _context.Department.Any(e => e.Id == id);
-        }
+        }        
     }
 }
