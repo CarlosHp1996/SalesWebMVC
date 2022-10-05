@@ -2,7 +2,6 @@
 using SalesWebMVC.Models;
 using SalesWebMVC.Models.ViewModels;
 using SalesWebMVC.Services;
-using SalesWebMVC.Services.Exceptions;
 using System.Diagnostics;
 
 namespace SalesWebMVC.Controllers
