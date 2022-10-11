@@ -24,8 +24,8 @@ namespace SalesWebMVC.Controllers
             if (!maxDate.HasValue)
                 maxDate = DateTime.Now;
 
-            ViewData["minDate"] = minDate.Value.ToString("yyy-MM-dd");
-            ViewData["maxDate"] = maxDate.Value.ToString("yyy-MM-dd");
+            ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
+            ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
             var result = await _salesRecordService.FindByDateAsync(minDate, maxDate);
             return View(result);
         }

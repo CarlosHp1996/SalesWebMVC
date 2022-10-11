@@ -19,13 +19,13 @@ namespace SalesWebMVC.Services
             if (minDate.HasValue)
                 result = result.Where(x => x.Date >= minDate.Value);
             if(maxDate.HasValue)
-                result = result.Where(x => x.Date >= maxDate.Value);
+                result = result.Where(x => x.Date <= maxDate.Value);
 
             return await result
                 .Include(x => x.Seller)
                 .Include(x => x.Seller.Department)
                 .OrderByDescending(x => x.Date)
                 .ToListAsync();
-        }
+        }        
     }
 }
